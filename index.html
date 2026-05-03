@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/images/anniversary-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KAZENERGY Association — 20 years of fueling Kazakhstan's energy progress. Information-analytical magazine, ESG metrics, and global partnerships."
+    />
+    <meta name="theme-color" content="#050A10" />
+    <title>KAZENERGY · 20 Years of Energy Leadership</title>
+    <script>
+      // Avoid theme flash
+      (function () {
+        try {
+          var t = localStorage.getItem("kz-theme");
+          if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-paper-100 text-royal-700 dark:bg-obsidian-500 dark:text-paper-100 transition-colors duration-500">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
