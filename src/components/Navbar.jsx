@@ -7,10 +7,23 @@ import {
   Moon,
   Menu,
   X,
-  Newspaper,
-  FileBarChart,
+  LogIn,
   Building2,
+  Users,
+  Heart,
+  ClipboardList,
+  Layers,
+  Briefcase,
+  ShoppingBag,
+  Phone,
+  Newspaper,
+  BookOpen,
+  Radio,
+  Image as ImageIcon,
+  Video,
   Sparkles,
+  Award,
+  ArrowUpRight,
 } from "lucide-react";
 import { dict, langLabel } from "../i18n";
 
@@ -44,23 +57,24 @@ export default function Navbar({ lang, setLang, theme, setTheme }) {
   }, []);
 
   const dropdowns = {
-    members: [
-      { label: t.members.production, icon: Building2 },
-      { label: t.members.services, icon: Sparkles },
-      { label: t.members.refining, icon: FileBarChart },
-      { label: t.members.renewable, icon: Newspaper },
+    association: [
+      { label: t.association.about, icon: Building2, href: "#about" },
+      { label: t.association.members, icon: Users, href: "#members" },
+      { label: t.association.benefits, icon: Heart, href: "#benefits" },
+      { label: t.association.conditions, icon: ClipboardList, href: "#join" },
+      { label: t.association.structure, icon: Layers, href: "#structure" },
+      { label: t.association.career, icon: Briefcase, href: "#career" },
+      { label: t.association.procurement, icon: ShoppingBag, href: "#procurement" },
+      { label: t.association.contacts, icon: Phone, href: "#contacts" },
     ],
-    reports: [
-      { label: t.reports.annual, icon: FileBarChart },
-      { label: t.reports.esg, icon: Sparkles },
-      { label: t.reports.market, icon: FileBarChart },
-      { label: t.reports.outlook, icon: FileBarChart },
-    ],
-    media: [
-      { label: t.media.magazine, icon: Newspaper },
-      { label: t.media.news, icon: Newspaper },
-      { label: t.media.press, icon: Newspaper },
-      { label: t.media.gallery, icon: Newspaper },
+    press: [
+      { label: t.press.news, icon: Newspaper, href: "#news" },
+      { label: t.press.magazine, icon: BookOpen, href: "#magazine" },
+      { label: t.press.releases, icon: Radio, href: "#releases" },
+      { label: t.press.photo, icon: ImageIcon, href: "#photo" },
+      { label: t.press.video, icon: Video, href: "#video" },
+      { label: t.press.anniversary, icon: Sparkles, href: "#anniversary" },
+      { label: t.press.victory, icon: Award, href: "#victory" },
     ],
   };
 
@@ -96,27 +110,21 @@ export default function Navbar({ lang, setLang, theme, setTheme }) {
 
         {/* Desktop nav */}
         <nav className="ml-auto hidden items-center gap-1 lg:flex">
-          <NavItem label={t.nav.about} href="#about" />
           <Dropdown
-            label={t.nav.members}
-            items={dropdowns.members}
-            open={openDropdown === "members"}
-            onToggle={() => setOpenDropdown(openDropdown === "members" ? null : "members")}
+            label={t.nav.association}
+            items={dropdowns.association}
+            open={openDropdown === "association"}
+            onToggle={() => setOpenDropdown(openDropdown === "association" ? null : "association")}
           />
+          <NavItem label={t.nav.activities} href="#activities" />
           <Dropdown
-            label={t.nav.reports}
-            items={dropdowns.reports}
-            open={openDropdown === "reports"}
-            onToggle={() => setOpenDropdown(openDropdown === "reports" ? null : "reports")}
+            label={t.nav.pressCenter}
+            items={dropdowns.press}
+            open={openDropdown === "press"}
+            onToggle={() => setOpenDropdown(openDropdown === "press" ? null : "press")}
           />
-          <Dropdown
-            label={t.nav.media}
-            items={dropdowns.media}
-            open={openDropdown === "media"}
-            onToggle={() => setOpenDropdown(openDropdown === "media" ? null : "media")}
-          />
-          <NavItem label={t.nav.partners} href="#partners" />
-          <NavItem label={t.nav.events} href="#events" />
+          <NavItem label={t.nav.ner} href="#ned" />
+          <ExiaPill label={t.nav.exia} />
         </nav>
 
         {/* Right tools */}
@@ -197,6 +205,22 @@ export default function Navbar({ lang, setLang, theme, setTheme }) {
             )}
           </div>
 
+          {/* Member log-in (icon-only on smaller screens, label on xl) */}
+          <button
+            aria-label={t.nav.memberLogin}
+            title={t.nav.memberLogin}
+            className="ring-focus ml-1 hidden items-center gap-1.5 rounded-full border border-royal-700/15 px-3 py-1.5 text-xs font-semibold text-royal-700 transition hover:border-royal-500/40 hover:bg-royal-700/5 lg:inline-flex dark:border-cyanblue-400/20 dark:text-paper-100 dark:hover:border-cyanblue-400/60 dark:hover:bg-cyanblue-400/10"
+          >
+            <LogIn className="h-3.5 w-3.5" />
+            <span className="hidden xl:inline">{t.nav.memberLogin}</span>
+          </button>
+
+          {/* Join CTA */}
+          <button className="ring-focus ml-1 hidden items-center gap-1.5 rounded-full bg-gradient-to-br from-royal-700 to-royal-500 px-4 py-1.5 text-xs font-semibold text-paper-100 shadow-cardLight transition hover:from-gold-500 hover:to-gold-400 hover:text-royal-700 hover:shadow-glowGold lg:inline-flex dark:from-cyanblue-500 dark:to-cyanblue-600 dark:hover:from-gold-500 dark:hover:to-gold-400 dark:hover:text-royal-700">
+            {t.nav.join}
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </button>
+
           {/* Mobile menu */}
           <button
             aria-label="Menu"
@@ -213,13 +237,14 @@ export default function Navbar({ lang, setLang, theme, setTheme }) {
         <div className="border-t border-royal-700/10 bg-paper-100/95 px-4 py-4 backdrop-blur-xl lg:hidden dark:border-cyanblue-400/10 dark:bg-obsidian-500/95">
           <ul className="grid gap-1 text-sm font-medium">
             {[
-              { label: t.nav.about, href: "#about" },
-              { label: t.nav.members, href: "#members" },
-              { label: t.nav.reports, href: "#reports" },
-              { label: t.nav.media, href: "#media" },
+              { label: t.nav.association, href: "#about" },
+              { label: t.nav.activities, href: "#activities" },
+              { label: t.nav.pressCenter, href: "#news" },
+              { label: t.nav.ner, href: "#ned" },
+              { label: t.nav.exia, href: "#exia" },
               { label: t.nav.partners, href: "#partners" },
               { label: t.nav.events, href: "#events" },
-              { label: t.nav.contact, href: "#contact" },
+              { label: t.nav.contact, href: "#contacts" },
             ].map((i) => (
               <li key={i.label}>
                 <a
@@ -233,6 +258,16 @@ export default function Navbar({ lang, setLang, theme, setTheme }) {
               </li>
             ))}
           </ul>
+          <div className="mt-4 grid grid-cols-2 gap-2">
+            <button className="inline-flex items-center justify-center gap-1.5 rounded-full border border-royal-700/15 px-3 py-2 text-xs font-semibold text-royal-700 dark:border-cyanblue-400/20 dark:text-paper-100">
+              <LogIn className="h-3.5 w-3.5" />
+              {t.nav.memberLogin}
+            </button>
+            <button className="inline-flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-br from-royal-700 to-royal-500 px-3 py-2 text-xs font-semibold text-paper-100 dark:from-cyanblue-500 dark:to-cyanblue-600">
+              {t.nav.join}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
         </div>
       )}
     </header>
@@ -247,6 +282,21 @@ function NavItem({ label, href }) {
     >
       <span>{label}</span>
       <span className="absolute inset-x-3 bottom-1 h-px origin-left scale-x-0 bg-gradient-to-r from-gold-500 to-royal-500 transition-transform duration-300 group-hover:scale-x-100 dark:from-cyanblue-400 dark:to-cyanblue-500" />
+    </a>
+  );
+}
+
+function ExiaPill({ label }) {
+  return (
+    <a
+      href="#exia"
+      className="ring-focus group ml-1 inline-flex items-center gap-1.5 rounded-full border border-gold-500/40 bg-gold-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.22em] text-gold-500 transition hover:bg-gold-500 hover:text-royal-700 dark:border-cyanblue-400/40 dark:bg-cyanblue-400/10 dark:text-cyanblue-400 dark:hover:bg-cyanblue-400 dark:hover:text-obsidian-500"
+    >
+      <span className="relative flex h-1.5 w-1.5">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold-500/70 dark:bg-cyanblue-400/70" />
+        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-gold-500 dark:bg-cyanblue-400" />
+      </span>
+      {label}
     </a>
   );
 }
@@ -271,7 +321,7 @@ function Dropdown({ label, items, open, onToggle }) {
             {items.map((it, i) => (
               <li key={i}>
                 <a
-                  href="#"
+                  href={it.href || "#"}
                   className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-royal-700 transition hover:bg-royal-700/5 dark:text-paper-100 dark:hover:bg-cyanblue-400/10"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-royal-700 to-royal-500 text-paper-100 shadow-sm transition group-hover:from-gold-500 group-hover:to-gold-400 dark:from-cyanblue-500 dark:to-cyanblue-600 dark:group-hover:from-gold-500 dark:group-hover:to-gold-400">
