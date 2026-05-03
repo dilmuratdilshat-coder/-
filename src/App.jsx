@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import VictoryRibbon from "./components/VictoryRibbon";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import IndustryStats from "./components/IndustryStats";
@@ -46,6 +47,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen overflow-x-clip">
+      <VictoryRibbon lang={lang} />
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} />
       <main>
         <Hero lang={lang} />

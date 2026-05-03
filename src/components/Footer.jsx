@@ -1,18 +1,70 @@
-import { Mail, MapPin, Phone, Linkedin, Twitter, Youtube, Send } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Linkedin,
+  Twitter,
+  Youtube,
+  Send,
+  ShieldCheck,
+} from "lucide-react";
 import { dict } from "../i18n";
 
 export default function Footer({ lang }) {
   const t = dict[lang].footer;
-  const nav = dict[lang].nav;
+  const cols = dict[lang].footerCols;
+  const a = dict[lang].association;
+  const act = dict[lang].activities.items;
+  const press = dict[lang].press;
   const cta = dict[lang].cta;
   const year = new Date().getFullYear();
+
+  const associationLinks = [
+    { label: a.members, href: "#members" },
+    { label: a.benefits, href: "#benefits" },
+    { label: a.conditions, href: "#join" },
+    { label: a.about, href: "#about" },
+    { label: a.structure, href: "#structure" },
+    { label: a.contacts, href: "#contacts" },
+    { label: a.career, href: "#career" },
+    { label: a.procurement, href: "#procurement" },
+  ];
+  const activitiesLinks = [
+    { label: act.legal, href: "#activity-legal" },
+    { label: act.ecology, href: "#activity-ecology" },
+    { label: act.oilGas, href: "#activity-oilGas" },
+    { label: act.power, href: "#activity-power" },
+    { label: act.regulation, href: "#activity-regulation" },
+    { label: act.intl, href: "#activity-intl" },
+    { label: act.capital, href: "#activity-capital" },
+    { label: act.forum, href: "#activity-forum" },
+    { label: act.councils, href: "#activity-councils" },
+    { label: act.science, href: "#activity-science" },
+  ];
+  const pressLinks = [
+    { label: press.news, href: "#news" },
+    { label: press.victory, href: "#victory" },
+    { label: press.anniversary, href: "#anniversary" },
+    { label: press.photo, href: "#photo" },
+    { label: press.video, href: "#video" },
+  ];
+
   return (
-    <footer id="contact" className="relative mt-24 border-t border-royal-700/10 dark:border-cyanblue-400/10">
+    <footer
+      id="contact"
+      className="relative mt-24 border-t border-royal-700/10 dark:border-cyanblue-400/10"
+    >
       <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-gold-500/60 to-transparent dark:via-cyanblue-400/60" />
+
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-12 md:px-8">
-        <div className="md:col-span-5">
+        {/* Brand + newsletter */}
+        <div className="md:col-span-4">
           <div className="flex items-center gap-3">
-            <img src="/images/anniversary-logo.png" alt="KAZENERGY" className="h-12 w-auto" />
+            <img
+              src="/images/anniversary-logo.png"
+              alt="KAZENERGY"
+              className="h-12 w-auto"
+            />
             <div>
               <div className="font-display text-lg font-bold tracking-[0.22em] text-royal-700 dark:text-paper-100">
                 KAZENERGY
@@ -25,6 +77,7 @@ export default function Footer({ lang }) {
           <p className="mt-5 max-w-md text-sm leading-relaxed text-royal-700/75 dark:text-paper-100/70">
             {t.tagline}
           </p>
+
           {/* Newsletter */}
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -32,7 +85,13 @@ export default function Footer({ lang }) {
           >
             <Mail className="h-4 w-4 text-royal-500 dark:text-cyanblue-400" />
             <input
-              placeholder={lang === "kk" ? "Электрондық пошта" : lang === "ru" ? "Электронная почта" : "Email address"}
+              placeholder={
+                lang === "kk"
+                  ? "Электрондық пошта"
+                  : lang === "ru"
+                    ? "Электронная почта"
+                    : "Email address"
+              }
               className="w-full bg-transparent py-2 text-sm placeholder:text-royal-700/40 focus:outline-none dark:placeholder:text-paper-100/40"
               type="email"
             />
@@ -40,35 +99,41 @@ export default function Footer({ lang }) {
               <Send className="h-3.5 w-3.5" /> {cta.learnMore}
             </button>
           </form>
+
+          {/* Accreditation badge */}
+          <a
+            href="#accreditation"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-royal-700/15 bg-paper-100/60 px-4 py-2 text-xs font-semibold text-royal-700 transition hover:border-gold-500/40 hover:text-gold-500 dark:border-cyanblue-400/20 dark:bg-obsidian-300/40 dark:text-paper-100 dark:hover:border-cyanblue-400/60 dark:hover:text-cyanblue-400"
+          >
+            <ShieldCheck className="h-3.5 w-3.5" />
+            {t.accreditation}
+          </a>
         </div>
 
-        <FooterCol
-          title={nav.about}
-          items={[nav.about, nav.events, nav.partners, nav.contact]}
-        />
-        <FooterCol
-          title={nav.media}
-          items={[
-            dict[lang].media.magazine,
-            dict[lang].media.news,
-            dict[lang].media.press,
-            dict[lang].media.gallery,
-          ]}
-        />
-        <div className="md:col-span-3">
+        <FooterCol title={cols.association} items={associationLinks} />
+        <FooterCol title={cols.activities} items={activitiesLinks} />
+        <FooterCol title={cols.press} items={pressLinks} />
+
+        <div className="md:col-span-2">
           <div className="text-[11px] font-semibold uppercase tracking-[0.32em] text-royal-700/60 dark:text-paper-100/60">
-            {nav.contact}
+            {cols.contact}
           </div>
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex items-start gap-2 text-royal-700/80 dark:text-paper-100/75">
               <MapPin className="mt-0.5 h-4 w-4 text-gold-500 dark:text-cyanblue-400" />
-              {t.address}
+              <span>{t.address}</span>
             </li>
             <li className="flex items-center gap-2 text-royal-700/80 dark:text-paper-100/75">
-              <Phone className="h-4 w-4 text-gold-500 dark:text-cyanblue-400" /> +7 7172 79 04 04
+              <Phone className="h-4 w-4 text-gold-500 dark:text-cyanblue-400" />
+              <a href="tel:+77172790404" className="hover:text-royal-700 dark:hover:text-paper-100">
+                +7 7172 79 04 04
+              </a>
             </li>
             <li className="flex items-center gap-2 text-royal-700/80 dark:text-paper-100/75">
-              <Mail className="h-4 w-4 text-gold-500 dark:text-cyanblue-400" /> office@kazenergy.com
+              <Mail className="h-4 w-4 text-gold-500 dark:text-cyanblue-400" />
+              <a href="mailto:office@kazenergy.com" className="hover:text-royal-700 dark:hover:text-paper-100">
+                office@kazenergy.com
+              </a>
             </li>
           </ul>
           <div className="mt-5 flex items-center gap-2">
@@ -84,16 +149,20 @@ export default function Footer({ lang }) {
           </div>
         </div>
       </div>
+
       <div className="border-t border-royal-700/10 dark:border-cyanblue-400/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-[11px] uppercase tracking-[0.22em] text-royal-700/55 md:flex-row md:px-8 dark:text-paper-100/55">
           <span>
-            © {year} KAZENERGY Association. {t.rights}
+            {t.sitemap} · KAZENERGY 2005–{year} © {t.rights}
           </span>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-royal-700 dark:hover:text-paper-100">
+            <a href="#sitemap" className="hover:text-royal-700 dark:hover:text-paper-100">
+              {t.sitemap}
+            </a>
+            <a href="#privacy" className="hover:text-royal-700 dark:hover:text-paper-100">
               {t.privacy}
             </a>
-            <a href="#" className="hover:text-royal-700 dark:hover:text-paper-100">
+            <a href="#terms" className="hover:text-royal-700 dark:hover:text-paper-100">
               {t.terms}
             </a>
           </div>
@@ -111,9 +180,12 @@ function FooterCol({ title, items }) {
       </div>
       <ul className="mt-4 space-y-2 text-sm text-royal-700/80 dark:text-paper-100/75">
         {items.map((i) => (
-          <li key={i}>
-            <a href="#" className="transition hover:text-royal-700 dark:hover:text-paper-100">
-              {i}
+          <li key={i.label}>
+            <a
+              href={i.href}
+              className="transition hover:text-royal-700 dark:hover:text-paper-100"
+            >
+              {i.label}
             </a>
           </li>
         ))}
