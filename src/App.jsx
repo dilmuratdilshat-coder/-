@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import IndustryStats from "./components/IndustryStats";
+import Activities from "./components/Activities";
 import KnowledgeCenter from "./components/KnowledgeCenter";
 import Ned from "./components/Ned";
 import EsgDashboard from "./components/EsgDashboard";
@@ -49,6 +50,7 @@ export default function App() {
       <main>
         <Hero lang={lang} />
         <IndustryStats lang={lang} />
+        <Activities lang={lang} />
         <KnowledgeCenter lang={lang} />
         <Ned lang={lang} />
         <EsgDashboard lang={lang} />
