@@ -36,9 +36,13 @@ export const dict = {
       learnMore: "Толығырақ",
       becomeMember: "Мүше болу",
       viewReport: "Есепті көру",
+      readMore: "Толығырақ оқу",
+      allNews: "Барлық жаңалықтар",
+      addToCalendar: "Күнтізбеге қосу",
+      openReport: "НЭД-ті ашу",
     },
     hero: {
-      eyebrow: "20 жыл энергетикалық көшбасшылық",
+      eyebrow: "БІРЛІК ЭНЕРГИЯСЫ · 20 ЖЫЛ КӨШБАСШЫЛЫҚ",
       title1: "Қазақстанның дамуын",
       title2: "20 жыл бойы отандырып келеміз",
       subtitle:
@@ -47,6 +51,23 @@ export const dict = {
       stat2: "Дипломатиялық серіктес",
       stat3: "Жариялаған есептер",
       stat4: "Зерттеу жобалары",
+    },
+    industry: {
+      eyebrow: "ҚАУЫМДАСТЫҚ МҮШЕЛЕРІНІҢ ҮЛЕСІ",
+      title: "Қазақстанның энергетикасы — KAZENERGY-де",
+      subtitle:
+        "Біздің мүше компаниялар ел экономикасының энергетикалық тірегін құрайды.",
+      items: {
+        oil: "Мұнай мен конденсат өндіру",
+        gas: "Газ өндіру (табиғи және СНГ)",
+        oilTransport: "Мұнайды тасымалдау",
+        gasTransport: "Газды тасымалдау",
+        powerGen: "Электр энергиясын өндіру",
+        gridCapacity: "БЭЖ қондырғылы қуат үлесі",
+        transmission: "Ұлттық электр желісі арқылы беру",
+        refining: "Мұнай өңдеу",
+        coal: "Көмір өндіру",
+      },
     },
     knowledge: {
       eyebrow: "БІЛІМ ОРТАЛЫҒЫ",
@@ -66,6 +87,78 @@ export const dict = {
         carbon: "Көміртек ізін азайту",
         gas: "Табиғи газ экспорты",
       },
+    },
+    news: {
+      eyebrow: "БАСПАСӨЗ ОРТАЛЫҒЫ",
+      title: "Соңғы жаңалықтар",
+      subtitle: "Қауымдастықтың және сала жаңалықтарынан хабардар болыңыз.",
+      items: [
+        {
+          date: "2 сәуір 2026",
+          tag: "Форум",
+          title:
+            "KAZENERGY GEOSCIENCE & EXPLORATION CENTRAL ASIA форумында",
+          excerpt:
+            "Орталық Азияның алғашқы Халықаралық геологиялық форумы Астанада өз жұмысын бастады.",
+        },
+        {
+          date: "2 наурыз 2026",
+          tag: "HR",
+          title:
+            "Қазатомпром әйелдер көшбасшылығы туралы воркшоп өткізді",
+          excerpt:
+            "Атом саласындағы тең мүмкіндіктер мәдениетіне арналған стратегиялық сессия.",
+        },
+        {
+          date: "27 ақпан 2026",
+          tag: "Технологиялар",
+          title:
+            "Заман сын-тегеуріндері: технологиялар мен ИИ дәуіріндегі қауіпсіздік",
+          excerpt:
+            "«Ембімұнайгаз» АҚ-та сала көшбасшылары мен сарапшыларға арналған форум өтті.",
+        },
+      ],
+    },
+    events: {
+      eyebrow: "ІС-ШАРАЛАР КҮНТІЗБЕСІ",
+      title: "Алдағы оқиғалар",
+      subtitle: "KAZENERGY қатысатын халықаралық сала іс-шаралары.",
+      items: [
+        {
+          date: "8–10 сәуір 2026",
+          city: "Атырау",
+          title: "Atyrau Oil & Gas 2026",
+          tag: "Көрме",
+        },
+        {
+          date: "28–30 сәуір 2026",
+          city: "Алматы",
+          title: "14-ші Қазақстан Еңбек қауіпсіздігі конференциясы",
+          tag: "Конференция",
+        },
+        {
+          date: "30 қыркүйек – 1 қазан 2026",
+          city: "Алматы",
+          title: "KIOGE 2026 — Қазақстан Мұнай-газ көрмесі",
+          tag: "Көрме",
+        },
+        {
+          date: "Қыркүйек 2026",
+          city: "Астана",
+          title: "Еуразиялық KAZENERGY форумы",
+          tag: "Форум",
+        },
+      ],
+    },
+    ned: {
+      eyebrow: "ҰЛТТЫҚ ЭНЕРГЕТИКАЛЫҚ ЕСЕП",
+      title: "Қазақстанның энергетикасына стратегиялық көзқарас",
+      subtitle:
+        "НЭД — Қазақстанның мұнай-газ және энергетика саласының тұрақты дамуы туралы жетекші сараптамалық құжат. 2005 жылдан бері жыл сайын жарияланады.",
+      stat1: "Сала көрсеткіші",
+      stat2: "Сарапшы автор",
+      stat3: "Тіл",
+      cta: "НЭД 2025 жүктеу",
     },
     partners: {
       eyebrow: "ЖАҺАНДЫҚ СЕРІКТЕСТІК",
@@ -116,9 +209,13 @@ export const dict = {
       learnMore: "Подробнее",
       becomeMember: "Стать участником",
       viewReport: "Открыть отчёт",
+      readMore: "Читать далее",
+      allNews: "Все новости",
+      addToCalendar: "В календарь",
+      openReport: "Открыть НЭД",
     },
     hero: {
-      eyebrow: "20 лет энергетического лидерства",
+      eyebrow: "ЭНЕРГИЯ ЕДИНСТВА · 20 ЛЕТ ЛИДЕРСТВА",
       title1: "Двадцать лет питаем",
       title2: "развитие Казахстана",
       subtitle:
@@ -127,6 +224,23 @@ export const dict = {
       stat2: "Дипломатических партнёров",
       stat3: "Опубликованных отчётов",
       stat4: "Исследовательских проектов",
+    },
+    industry: {
+      eyebrow: "ДОЛЯ ЧЛЕНОВ АССОЦИАЦИИ",
+      title: "Энергетика Казахстана — это KAZENERGY",
+      subtitle:
+        "Компании-члены Ассоциации формируют энергетический фундамент экономики страны.",
+      items: {
+        oil: "Добыча нефти и конденсата",
+        gas: "Добыча газа (природный и СНГ)",
+        oilTransport: "Транспортировка нефти",
+        gasTransport: "Транспортировка газа",
+        powerGen: "Производство электроэнергии",
+        gridCapacity: "Доля установленной мощности ЕЭС РК",
+        transmission: "Транспортировка по национальной сети",
+        refining: "Переработка нефти",
+        coal: "Добыча угля",
+      },
     },
     knowledge: {
       eyebrow: "ЦЕНТР ЗНАНИЙ",
@@ -146,6 +260,79 @@ export const dict = {
         carbon: "Снижение углеродного следа",
         gas: "Экспорт природного газа",
       },
+    },
+    news: {
+      eyebrow: "ПРЕСС-ЦЕНТР",
+      title: "Последние новости",
+      subtitle: "Будьте в курсе событий Ассоциации и отрасли.",
+      items: [
+        {
+          date: "2 апреля 2026",
+          tag: "Форум",
+          title:
+            "KAZENERGY на форуме GEOSCIENCE & EXPLORATION CENTRAL ASIA",
+          excerpt:
+            "В Астане начал работу первый Международный геологический форум Центральной Азии.",
+        },
+        {
+          date: "2 марта 2026",
+          tag: "HR",
+          title:
+            "Казатомпром провёл воркшоп по женскому лидерству в атомной отрасли",
+          excerpt:
+            "Стратегическая сессия о культуре равных возможностей и развитии лидерства.",
+        },
+        {
+          date: "27 февраля 2026",
+          tag: "Технологии",
+          title:
+            "Вызовы времени: технологии, безопасность и человеческий капитал в эпоху ИИ",
+          excerpt:
+            "В офисе АО «Эмбамунайгаз» прошёл форум для отраслевых лидеров и экспертов.",
+        },
+      ],
+    },
+    events: {
+      eyebrow: "КАЛЕНДАРЬ СОБЫТИЙ",
+      title: "Ближайшие мероприятия",
+      subtitle: "Главные международные события отрасли при участии KAZENERGY.",
+      items: [
+        {
+          date: "8–10 апреля 2026",
+          city: "Атырау",
+          title: "Atyrau Oil & Gas 2026",
+          tag: "Выставка",
+        },
+        {
+          date: "28–30 апреля 2026",
+          city: "Алматы",
+          title:
+            "14-я Казахстанская конференция по охране труда и промышленной безопасности",
+          tag: "Конференция",
+        },
+        {
+          date: "30 сентября – 1 октября 2026",
+          city: "Алматы",
+          title: "KIOGE 2026 — Казахстанская нефтегазовая выставка",
+          tag: "Выставка",
+        },
+        {
+          date: "Сентябрь 2026",
+          city: "Астана",
+          title: "Евразийский форум KAZENERGY",
+          tag: "Форум",
+        },
+      ],
+    },
+    ned: {
+      eyebrow: "НАЦИОНАЛЬНЫЙ ЭНЕРГЕТИЧЕСКИЙ ДОКЛАД",
+      title: "Стратегический взгляд на энергетику Казахстана",
+      subtitle:
+        "НЭД — флагманский аналитический документ KAZENERGY о устойчивом развитии нефтегазовой и энергетической отрасли. Публикуется с 2005 года.",
+      stat1: "Отраслевых показателей",
+      stat2: "Экспертов-авторов",
+      stat3: "Языка",
+      cta: "Скачать НЭД 2025",
     },
     partners: {
       eyebrow: "ГЛОБАЛЬНОЕ ПАРТНЁРСТВО",
@@ -196,9 +383,13 @@ export const dict = {
       learnMore: "Learn more",
       becomeMember: "Become a member",
       viewReport: "Open report",
+      readMore: "Read more",
+      allNews: "All news",
+      addToCalendar: "Add to calendar",
+      openReport: "Open NER",
     },
     hero: {
-      eyebrow: "Twenty Years of Energy Leadership",
+      eyebrow: "ENERGY OF UNITY · 20 YEARS OF LEADERSHIP",
       title1: "Two decades of fueling",
       title2: "Kazakhstan's progress",
       subtitle:
@@ -207,6 +398,23 @@ export const dict = {
       stat2: "Diplomatic partners",
       stat3: "Reports published",
       stat4: "Research initiatives",
+    },
+    industry: {
+      eyebrow: "MEMBER COMPANIES' SHARE",
+      title: "Kazakhstan's energy is KAZENERGY",
+      subtitle:
+        "Our member companies form the energy backbone of the national economy.",
+      items: {
+        oil: "Oil & condensate production",
+        gas: "Gas production (natural & LNG)",
+        oilTransport: "Oil transportation",
+        gasTransport: "Gas transportation",
+        powerGen: "Electricity generation",
+        gridCapacity: "Installed capacity of the unified grid",
+        transmission: "Transmission via the national grid",
+        refining: "Oil refining",
+        coal: "Coal production",
+      },
     },
     knowledge: {
       eyebrow: "KNOWLEDGE CENTER",
@@ -226,6 +434,78 @@ export const dict = {
         carbon: "Carbon Footprint Reduction",
         gas: "Natural Gas Exports",
       },
+    },
+    news: {
+      eyebrow: "PRESS CENTRE",
+      title: "Latest news",
+      subtitle: "Stay informed on Association initiatives and industry milestones.",
+      items: [
+        {
+          date: "2 April 2026",
+          tag: "Forum",
+          title:
+            "KAZENERGY at the GEOSCIENCE & EXPLORATION CENTRAL ASIA forum",
+          excerpt:
+            "Central Asia's first International Geological Forum opened in Astana with KAZENERGY in attendance.",
+        },
+        {
+          date: "2 March 2026",
+          tag: "HR",
+          title:
+            "Kazatomprom hosts a women-leadership workshop in the nuclear sector",
+          excerpt:
+            "A strategic session on equal-opportunity culture and leadership development across the industry.",
+        },
+        {
+          date: "27 February 2026",
+          tag: "Technology",
+          title:
+            "Challenges of the time: technology, safety and human capital in the AI era",
+          excerpt:
+            "Embamunaigas hosted an industry forum bringing together executives and senior experts.",
+        },
+      ],
+    },
+    events: {
+      eyebrow: "EVENTS CALENDAR",
+      title: "Upcoming events",
+      subtitle: "Major industry events with KAZENERGY participation.",
+      items: [
+        {
+          date: "8–10 April 2026",
+          city: "Atyrau",
+          title: "Atyrau Oil & Gas 2026",
+          tag: "Exhibition",
+        },
+        {
+          date: "28–30 April 2026",
+          city: "Almaty",
+          title: "14th Kazakhstan Conference on OHS & Industrial Safety",
+          tag: "Conference",
+        },
+        {
+          date: "30 Sep – 1 Oct 2026",
+          city: "Almaty",
+          title: "KIOGE 2026 — Kazakhstan Oil & Gas Exhibition",
+          tag: "Exhibition",
+        },
+        {
+          date: "September 2026",
+          city: "Astana",
+          title: "Eurasian KAZENERGY Forum",
+          tag: "Forum",
+        },
+      ],
+    },
+    ned: {
+      eyebrow: "NATIONAL ENERGY REPORT",
+      title: "A strategic outlook on Kazakhstan's energy",
+      subtitle:
+        "The NER is KAZENERGY's flagship analytical publication on the sustainable development of the oil-and-gas and energy sector. Published annually since 2005.",
+      stat1: "Industry indicators",
+      stat2: "Contributing experts",
+      stat3: "Languages",
+      cta: "Download NER 2025",
     },
     partners: {
       eyebrow: "GLOBAL PARTNERSHIPS",

@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import IndustryStats from "./components/IndustryStats";
 import KnowledgeCenter from "./components/KnowledgeCenter";
+import Ned from "./components/Ned";
 import EsgDashboard from "./components/EsgDashboard";
+import News from "./components/News";
+import Events from "./components/Events";
 import Partners from "./components/Partners";
 import Footer from "./components/Footer";
 
@@ -44,8 +48,12 @@ export default function App() {
       <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} />
       <main>
         <Hero lang={lang} />
+        <IndustryStats lang={lang} />
         <KnowledgeCenter lang={lang} />
+        <Ned lang={lang} />
         <EsgDashboard lang={lang} />
+        <News lang={lang} />
+        <Events lang={lang} />
         <Partners lang={lang} />
       </main>
       <Footer lang={lang} />
