@@ -219,7 +219,7 @@ export default function Navbar({ lang, setLang, theme, setTheme }) {
 
           {/* Member log-in (icon-only on smaller screens, label on xl) */}
           <a
-            href={memberLogin}
+            href={memberLogin(lang)}
             target="_blank"
             rel="noreferrer"
             aria-label={t.nav.memberLogin}
@@ -281,7 +281,7 @@ export default function Navbar({ lang, setLang, theme, setTheme }) {
           </ul>
           <div className="mt-4 grid grid-cols-2 gap-2">
             <a
-              href={memberLogin}
+              href={memberLogin(lang)}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-1.5 rounded-full border border-royal-700/15 px-3 py-2 text-xs font-semibold text-royal-700 dark:border-cyanblue-400/20 dark:text-paper-100"
