@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Download, BookOpen } from "lucide-react";
 import { dict } from "../i18n";
 import { magazineIssues } from "../data";
+import { pressLinks } from "../links";
 import MagazineCover from "./MagazineCover";
 
 export default function KnowledgeCenter({ lang }) {
@@ -120,13 +121,16 @@ export default function KnowledgeCenter({ lang }) {
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 <a
                   href={current.pdfUrl}
+                  download
                   className="btn-primary justify-center bg-gradient-to-br from-royal-700 to-royal-500 text-paper-100 hover:from-gold-500 hover:to-gold-400 hover:text-royal-700 dark:from-cyanblue-500 dark:to-cyanblue-600 dark:hover:from-gold-500 dark:hover:to-gold-400 dark:hover:text-royal-700"
                 >
                   <Download className="h-4 w-4" />
                   {cta.downloadPDF}
                 </a>
                 <a
-                  href="#"
+                  href={pressLinks(lang).magazine}
+                  target="_blank"
+                  rel="noreferrer"
                   className="btn-primary justify-center border border-royal-700/15 bg-paper-100/60 text-royal-700 hover:border-royal-500/40 hover:bg-paper-100 dark:border-cyanblue-400/20 dark:bg-obsidian-300/40 dark:text-paper-100 dark:hover:border-cyanblue-400/60 dark:hover:bg-obsidian-300/70"
                 >
                   <BookOpen className="h-4 w-4" />

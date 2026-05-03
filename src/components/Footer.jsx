@@ -3,12 +3,19 @@ import {
   MapPin,
   Phone,
   Linkedin,
-  Twitter,
+  Facebook,
   Youtube,
   Send,
   ShieldCheck,
 } from "lucide-react";
 import { dict } from "../i18n";
+import {
+  associationLinks,
+  activitiesLinks,
+  pressLinks,
+  social,
+  contact,
+} from "../links";
 
 export default function Footer({ lang }) {
   const t = dict[lang].footer;
@@ -19,34 +26,38 @@ export default function Footer({ lang }) {
   const cta = dict[lang].cta;
   const year = new Date().getFullYear();
 
-  const associationLinks = [
-    { label: a.members, href: "#members" },
-    { label: a.benefits, href: "#benefits" },
-    { label: a.conditions, href: "#join" },
-    { label: a.about, href: "#about" },
-    { label: a.structure, href: "#structure" },
-    { label: a.contacts, href: "#contacts" },
-    { label: a.career, href: "#career" },
-    { label: a.procurement, href: "#procurement" },
+  const aUrls = associationLinks(lang);
+  const actUrls = activitiesLinks(lang);
+  const pUrls = pressLinks(lang);
+
+  const associationCol = [
+    { label: a.members, href: aUrls.members, external: true },
+    { label: a.benefits, href: aUrls.benefits, external: true },
+    { label: a.conditions, href: "/docs/joining-association.pdf", download: true },
+    { label: a.about, href: aUrls.about, external: true },
+    { label: a.structure, href: aUrls.structure, external: true },
+    { label: a.contacts, href: aUrls.contacts, external: true },
+    { label: a.career, href: aUrls.career, external: true },
+    { label: a.procurement, href: aUrls.procurement, external: true },
   ];
-  const activitiesLinks = [
-    { label: act.legal, href: "#activity-legal" },
-    { label: act.ecology, href: "#activity-ecology" },
-    { label: act.oilGas, href: "#activity-oilGas" },
-    { label: act.power, href: "#activity-power" },
-    { label: act.regulation, href: "#activity-regulation" },
-    { label: act.intl, href: "#activity-intl" },
-    { label: act.capital, href: "#activity-capital" },
-    { label: act.forum, href: "#activity-forum" },
-    { label: act.councils, href: "#activity-councils" },
-    { label: act.science, href: "#activity-science" },
+  const activitiesCol = [
+    { label: act.legal, href: actUrls.legal, external: true },
+    { label: act.ecology, href: actUrls.ecology, external: true },
+    { label: act.oilGas, href: actUrls.oilGas, external: true },
+    { label: act.power, href: actUrls.power, external: true },
+    { label: act.regulation, href: actUrls.regulation, external: true },
+    { label: act.intl, href: actUrls.intl, external: true },
+    { label: act.capital, href: actUrls.capital, external: true },
+    { label: act.forum, href: actUrls.forum, external: true },
+    { label: act.councils, href: actUrls.councils, external: true },
+    { label: act.science, href: actUrls.science, external: true },
   ];
-  const pressLinks = [
-    { label: press.news, href: "#news" },
+  const pressCol = [
+    { label: press.news, href: pUrls.news, external: true },
     { label: press.victory, href: "#victory" },
     { label: press.anniversary, href: "#anniversary" },
-    { label: press.photo, href: "#photo" },
-    { label: press.video, href: "#video" },
+    { label: press.photo, href: pUrls.photo, external: true },
+    { label: press.video, href: pUrls.video, external: true },
   ];
 
   return (
@@ -110,9 +121,9 @@ export default function Footer({ lang }) {
           </a>
         </div>
 
-        <FooterCol title={cols.association} items={associationLinks} />
-        <FooterCol title={cols.activities} items={activitiesLinks} />
-        <FooterCol title={cols.press} items={pressLinks} />
+        <FooterCol title={cols.association} items={associationCol} />
+        <FooterCol title={cols.activities} items={activitiesCol} />
+        <FooterCol title={cols.press} items={pressCol} />
 
         <div className="md:col-span-2">
           <div className="text-[11px] font-semibold uppercase tracking-[0.32em] text-royal-700/60 dark:text-paper-100/60">
@@ -125,22 +136,36 @@ export default function Footer({ lang }) {
             </li>
             <li className="flex items-center gap-2 text-royal-700/80 dark:text-paper-100/75">
               <Phone className="h-4 w-4 text-gold-500 dark:text-cyanblue-400" />
-              <a href="tel:+77172790404" className="hover:text-royal-700 dark:hover:text-paper-100">
-                +7 7172 79 04 04
+              <a
+                href={`tel:${contact.phoneTel}`}
+                className="hover:text-royal-700 dark:hover:text-paper-100"
+              >
+                {contact.phone}
               </a>
             </li>
             <li className="flex items-center gap-2 text-royal-700/80 dark:text-paper-100/75">
               <Mail className="h-4 w-4 text-gold-500 dark:text-cyanblue-400" />
-              <a href="mailto:office@kazenergy.com" className="hover:text-royal-700 dark:hover:text-paper-100">
-                office@kazenergy.com
+              <a
+                href={`mailto:${contact.email}`}
+                className="hover:text-royal-700 dark:hover:text-paper-100"
+              >
+                {contact.email}
               </a>
             </li>
           </ul>
           <div className="mt-5 flex items-center gap-2">
-            {[Linkedin, Twitter, Youtube].map((Ic, i) => (
+            {[
+              { Ic: Linkedin, href: social.linkedin, label: "LinkedIn" },
+              { Ic: Facebook, href: social.facebook, label: "Facebook" },
+              { Ic: Youtube, href: social.youtube, label: "YouTube" },
+            ].map(({ Ic, href, label }) => (
               <a
-                key={i}
-                href="#"
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                title={label}
                 className="ring-focus rounded-full border border-royal-700/15 p-2 text-royal-700/80 transition hover:border-royal-500/40 hover:text-royal-700 dark:border-cyanblue-400/20 dark:text-paper-100/70 dark:hover:border-cyanblue-400/60 dark:hover:text-paper-100"
               >
                 <Ic className="h-4 w-4" />
@@ -183,6 +208,9 @@ function FooterCol({ title, items }) {
           <li key={i.label}>
             <a
               href={i.href}
+              target={i.external ? "_blank" : undefined}
+              rel={i.external ? "noreferrer" : undefined}
+              download={i.download ? "" : undefined}
               className="transition hover:text-royal-700 dark:hover:text-paper-100"
             >
               {i.label}

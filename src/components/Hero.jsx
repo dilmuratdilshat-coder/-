@@ -1,5 +1,6 @@
 import { ArrowRight, Compass, Award, Users, Globe2 } from "lucide-react";
 import { dict } from "../i18n";
+import { joinPdf, associationLinks } from "../links";
 
 export default function Hero({ lang }) {
   const t = dict[lang].hero;
@@ -53,13 +54,22 @@ export default function Hero({ lang }) {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <button className="btn-primary bg-gradient-to-br from-royal-700 to-royal-500 text-paper-100 shadow-cardLight hover:from-gold-500 hover:to-gold-400 hover:text-royal-700 hover:shadow-glowGold dark:from-cyanblue-500 dark:to-cyanblue-600 dark:hover:from-gold-500 dark:hover:to-gold-400 dark:hover:text-royal-700 dark:hover:shadow-glowGold">
+            <a
+              href={joinPdf}
+              download
+              className="btn-primary bg-gradient-to-br from-royal-700 to-royal-500 text-paper-100 shadow-cardLight hover:from-gold-500 hover:to-gold-400 hover:text-royal-700 hover:shadow-glowGold dark:from-cyanblue-500 dark:to-cyanblue-600 dark:hover:from-gold-500 dark:hover:to-gold-400 dark:hover:text-royal-700 dark:hover:shadow-glowGold"
+            >
               {dict[lang].cta.becomeMember}
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-            </button>
-            <button className="btn-primary border border-royal-700/15 bg-paper-100/60 text-royal-700 backdrop-blur transition hover:border-royal-500/50 hover:bg-paper-100 dark:border-cyanblue-400/20 dark:bg-obsidian-300/40 dark:text-paper-100 dark:hover:border-cyanblue-400/60 dark:hover:bg-obsidian-300/70">
+            </a>
+            <a
+              href={associationLinks(lang).about}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary border border-royal-700/15 bg-paper-100/60 text-royal-700 backdrop-blur transition hover:border-royal-500/50 hover:bg-paper-100 dark:border-cyanblue-400/20 dark:bg-obsidian-300/40 dark:text-paper-100 dark:hover:border-cyanblue-400/60 dark:hover:bg-obsidian-300/70"
+            >
               {dict[lang].cta.learnMore}
-            </button>
+            </a>
           </div>
 
           {/* Stats */}

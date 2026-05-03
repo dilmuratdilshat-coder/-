@@ -13,7 +13,7 @@ export const magazineIssues = [
     },
     accent: "from-royal-500 to-cyanblue-500",
     cover: "wind",
-    pdfUrl: "#",
+    pdfUrl: "/docs/joining-association.pdf",
   },
   {
     id: 72,
@@ -26,7 +26,7 @@ export const magazineIssues = [
     },
     accent: "from-cyanblue-500 to-cyanblue-600",
     cover: "panel",
-    pdfUrl: "#",
+    pdfUrl: "/docs/joining-association.pdf",
   },
   {
     id: 71,
@@ -39,7 +39,7 @@ export const magazineIssues = [
     },
     accent: "from-gold-500 to-royal-500",
     cover: "h2",
-    pdfUrl: "#",
+    pdfUrl: "/docs/joining-association.pdf",
   },
   {
     id: 70,
@@ -52,7 +52,7 @@ export const magazineIssues = [
     },
     accent: "from-royal-700 to-royal-500",
     cover: "rig",
-    pdfUrl: "#",
+    pdfUrl: "/docs/joining-association.pdf",
   },
   {
     id: 69,
@@ -65,7 +65,7 @@ export const magazineIssues = [
     },
     accent: "from-cyanblue-600 to-royal-700",
     cover: "atom",
-    pdfUrl: "#",
+    pdfUrl: "/docs/joining-association.pdf",
   },
   {
     id: 68,
@@ -78,7 +78,7 @@ export const magazineIssues = [
     },
     accent: "from-gold-500 to-gold-600",
     cover: "diplomacy",
-    pdfUrl: "#",
+    pdfUrl: "/docs/joining-association.pdf",
   },
 ];
 
