@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  color: #2E2E2E;
+  background-color: #FDFCFA;
+}
+
+::selection {
+  background-color: #F7E7CE;
+  color: #1F1F1F;
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24 py-20 md:py-28;
+  }
+
+  .gold-divider {
+    @apply w-16 h-0.5 bg-gradient-to-r from-gold-300 via-champagne-dark to-gold-300 mx-auto my-6;
+  }
+
+  .btn-primary {
+    @apply inline-block px-8 py-3 bg-charcoal-800 text-white font-sans text-sm tracking-widest uppercase
+           hover:bg-charcoal-700 transition-all duration-300 ease-in-out;
+  }
+
+  .btn-outline {
+    @apply inline-block px-8 py-3 border border-champagne-dark text-champagne-dark font-sans text-sm tracking-widest uppercase
+           hover:bg-champagne-dark hover:text-white transition-all duration-300 ease-in-out;
+  }
+
+  .section-title {
+    @apply font-serif text-4xl md:text-5xl font-light text-charcoal-800 tracking-wide;
+  }
+
+  .section-subtitle {
+    @apply font-sans text-sm tracking-[0.25em] uppercase text-champagne-dark mt-2;
+  }
+}
